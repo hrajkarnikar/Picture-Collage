@@ -77,14 +77,14 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     
     @IBAction func joinButtonPressed(_ sender: UIButton) {
-        let topImage = FirstImageView.image // 355 X 200
-        let bottomImage = SecondImageView.image  // 355 X 60
+        let leftImage = FirstImageView.image // 355 X 200
+        let rightImage = SecondImageView.image  // 355 X 60
         
-        let size = CGSize(width: (topImage?.size.width)!, height: (topImage?.size.height)! + (bottomImage?.size.height)!)
+        let size = CGSize(width: (leftImage?.size.width)! + (rightImage?.size.width)!, height: (leftImage?.size.height)!)
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         
-        topImage?.draw(in: CGRect(x:0, y:0, width:size.width, height: (topImage?.size.height)!))
-        bottomImage?.draw(in: CGRect(x:0, y:(topImage?.size.height)!, width: size.width,  height: (bottomImage?.size.height)!))
+        leftImage?.draw(in: CGRect(x:0, y:0, width: (size.width / 2), height: size.height))
+        rightImage?.draw(in: CGRect(x:(size.width / 2), y:0, width: (size.width / 2),  height: size.height))
         
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -94,6 +94,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,U
         
         // Here is your final combined images into a single image view.
         CombinedImageView.image = newImage
+        UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil);
+        
     }
     
     
