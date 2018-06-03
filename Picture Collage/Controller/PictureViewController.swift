@@ -15,6 +15,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var CombinedImageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
+    var imagePicked = 0
     
     
     override func viewDidLoad() {
@@ -23,17 +24,18 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,U
         // Do any additional setup after loading the view.
         
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapPicture))
         
-        assignTapGesture(imageView: FirstImageView, useGesture: tapGesture)
-        assignTapGesture(imageView: SecondImageView, useGesture: tapGesture)
+        
+        assignTapGesture(imageView: FirstImageView)
+        assignTapGesture(imageView: SecondImageView)
         
         imagePicker.delegate = self
 
     }
     
-    func assignTapGesture(imageView: UIImageView, useGesture: UITapGestureRecognizer) {
-        imageView.addGestureRecognizer(useGesture)
+    func assignTapGesture(imageView: UIImageView) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapPicture))
+        imageView.addGestureRecognizer(tapGesture)
         imageView.isUserInteractionEnabled = true
     }
     
@@ -50,8 +52,18 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            FirstImageView.contentMode = .scaleAspectFit
-            FirstImageView.image = pickedImage
+            imagePicked = imagePicked + 1
+            
+            if imagePicked == 1 {
+                FirstImageView.contentMode = .scaleAspectFit
+                FirstImageView.image = pickedImage
+            } else if imagePicked == 2 {
+                SecondImageView.contentMode = .scaleAspectFit
+                SecondImageView.image = pickedImage
+            }
+            
+            
+            
         }
         
         dismiss(animated: true, completion: nil)
@@ -65,7 +77,23 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     
     @IBAction func joinButtonPressed(_ sender: UIButton) {
+        let topImage = FirstImageView.image // 355 X 200
+        let bottomImage = SecondImageView.image  // 355 X 60
         
+        let size = CGSize(width: (topImage?.size.width)!, height: (topImage?.size.height)! + (bottomImage?.size.height)!)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        
+        topImage?.draw(in: CGRect(x:0, y:0, width:size.width, height: (topImage?.size.height)!))
+        bottomImage?.draw(in: CGRect(x:0, y:(topImage?.size.height)!, width: size.width,  height: (bottomImage?.size.height)!))
+        
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        // I've added an UIImageView, You can change as per your requirement.
+        //let mergeImageView = UIImageView(frame: CGRect(x:0, y: 200, width: 355, height: 260))
+        
+        // Here is your final combined images into a single image view.
+        CombinedImageView.image = newImage
     }
     
     
