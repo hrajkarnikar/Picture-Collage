@@ -18,17 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yl-eZ-1hb">
-                                <rect key="frame" x="16" y="84" width="76" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2g-6X-fui">
+                                <rect key="frame" x="16" y="97" width="64" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="frameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCK-ZA-8uu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Choose a Frame" id="czd-JH-MEV"/>
                     <connections>
-                        <outlet property="frame" destination="8Yl-eZ-1hb" id="hy4-zd-tiB"/>
+                        <outlet property="frameButton" destination="J2g-6X-fui" id="Ema-kf-6va"/>
                         <segue destination="rOx-x7-kOP" kind="show" identifier="selectPictures" id="DwH-04-mQm"/>
                     </connections>
                 </viewController>
@@ -43,13 +47,40 @@
                     <view key="view" contentMode="scaleToFill" id="9Dw-gA-pdH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="FirstImage" translatesAutoresizingMaskIntoConstraints="NO" id="9dj-Mn-6Mf" userLabel="First Image View">
+                                <rect key="frame" x="16" y="100" width="127" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PF-gm-Kax" userLabel="Combined Image View">
+                                <rect key="frame" x="79" y="380" width="254" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjB-0z-QOx">
+                                <rect key="frame" x="172" y="278" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Join"/>
+                                <connections>
+                                    <action selector="joinButtonPressed:" destination="rOx-x7-kOP" eventType="touchUpInside" id="1Da-cb-9QB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="SecondImage" translatesAutoresizingMaskIntoConstraints="NO" id="yma-wY-eYy" userLabel="Second Image View">
+                                <rect key="frame" x="232" y="100" width="127" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pyh-JF-pA9"/>
                     </view>
+                    <connections>
+                        <outlet property="CombinedImageView" destination="3PF-gm-Kax" id="rvL-mc-YNr"/>
+                        <outlet property="FirstImageView" destination="9dj-Mn-6Mf" id="Fn2-vq-gMV"/>
+                        <outlet property="SecondImageView" destination="yma-wY-eYy" id="Jbt-0T-h3y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TL-80-ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="-581"/>
+            <point key="canvasLocation" x="1608.8" y="-581.55922038980509"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1N0-8s-fXi">

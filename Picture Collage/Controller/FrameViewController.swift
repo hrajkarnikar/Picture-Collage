@@ -10,7 +10,8 @@ import UIKit
 
 class FrameViewController: UIViewController {
 
-    @IBOutlet weak var frame: UIImageView!
+    @IBOutlet weak var frameButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,14 @@ class FrameViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! PictureViewController
+        //let destinationVC = segue.destination as! PictureViewController
     }
     
     
-
+    @IBAction func frameButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "selectPictures", sender: self)
+    }
+    
 
 }
 
