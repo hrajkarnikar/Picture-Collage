@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46CAC38A3CA966E239826999 /* Pods_Picture_Collage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC6309BE2C18508937F851F /* Pods_Picture_Collage.framework */; };
+		7161936120C699880096A890 /* MultiplePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7161936020C699880096A890 /* MultiplePictureViewController.swift */; };
 		7173770A20C2A8EB00A66B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173770920C2A8EB00A66B5E /* AppDelegate.swift */; };
 		7173770C20C2A8EB00A66B5E /* FrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173770B20C2A8EB00A66B5E /* FrameViewController.swift */; };
 		7173770F20C2A8EB00A66B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7173770D20C2A8EB00A66B5E /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		3A99F31B82976AECB7A34FBB /* Pods-Picture Collage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picture Collage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picture Collage/Pods-Picture Collage.debug.xcconfig"; sourceTree = "<group>"; };
 		42038D8992C4456A9349E614 /* Pods-Picture Collage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picture Collage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Picture Collage/Pods-Picture Collage.release.xcconfig"; sourceTree = "<group>"; };
+		7161936020C699880096A890 /* MultiplePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplePictureViewController.swift; sourceTree = "<group>"; };
 		7173770620C2A8EB00A66B5E /* Picture Collage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Picture Collage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7173770920C2A8EB00A66B5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7173770B20C2A8EB00A66B5E /* FrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				7173770B20C2A8EB00A66B5E /* FrameViewController.swift */,
 				7173772220C2AB8300A66B5E /* PictureViewController.swift */,
+				7161936020C699880096A890 /* MultiplePictureViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				7173772320C2AB8300A66B5E /* PictureViewController.swift in Sources */,
 				7173770A20C2A8EB00A66B5E /* AppDelegate.swift in Sources */,
 				7173771220C2A8EB00A66B5E /* Picture_Collage.xcdatamodeld in Sources */,
+				7161936120C699880096A890 /* MultiplePictureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -94,13 +94,15 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,U
         
         // Here is your final combined images into a single image view.
         CombinedImageView.image = newImage
+        //mergeImageView.image = newImage
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil);
         
     }
     
     
     
-
+    
+    
     /*
     // MARK: - Navigation
 

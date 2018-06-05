@@ -32,6 +32,9 @@ class FrameViewController: UIViewController {
         performSegue(withIdentifier: "selectPictures", sender: self)
     }
     
-
+    @IBAction func multiplePicturesPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "selectMultiplePictures", sender: self)
+    }
+    
 }
 
